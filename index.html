@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<div id="home" class="page-content wc-container">
+  <p class="texto">Bienvenido a HackLab Academy; en esta página podrá encontrar varios cursos sobre tecnología. En cada curso podrá encontrar distintos apartados donde el usuario puede buscar información, además de encontrar tutoriales y consejos para tener un manual de referencia de Buenas prácticas.</p>
+  <h4>Cursos Disponibles</h4>
+	<div class="posts">
+  		{% for curso in site.cursos limit:10 %}
+  			<div class="post">
+    			<h3 class="post-title">
+			      <a href="{{ curso.url | prepend: site.baseurl | prepend: site.url }}">
+			        {{ curso.title }}
+			      </a>
+    			</h3>
+  			
+  				<p>
+	  				{{ curso.description }}	
+  				</p>
+  				<p>
+  					<a href="{{ curso.url | prepend: site.baseurl | prepend: site.url }}" title="{{ curso.title}}">
+  						Ver Curso
+					</a>
+  				</p>
+  			</div>
+  		{% endfor %}
+	</div>
+</div>
